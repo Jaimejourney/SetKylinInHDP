@@ -25,6 +25,10 @@ $ sudo -u hdfs hdfs dfs -chmod 777 /kylin
 
 
 
+
+
+
+
 2、Something wrong with Hive CLI or Beeline, please execute Hive CLI or Beeline CLI in terminal to find the root cause.
 
 解决方法：
@@ -36,6 +40,10 @@ hive_env=`hive ${hive_conf_properties} -e set 2>&1 | grep 'env:CLASSPATH'` 中�
 hive_env=`hive -e set 2>&1 | grep 'env:CLASSPATH'` 
 
 ![bug2](https://github.com/Jaimejourney/SetKylinInHDP/blob/master/pic/bug2.png)
+
+
+
+
 
 
 
@@ -63,6 +71,10 @@ export HCAT_HOME=/usr/hdp/current/hive-webhcat
 
 
 
+
+
+
+
 4、Caused by: java.lang.NoClassDefFoundError: org/apache/commons/configuration/ConfigurationException
 
 解决方法：将commons-configuration-*.jar 复制到kylin的tomcat/lib 下
@@ -70,6 +82,10 @@ export HCAT_HOME=/usr/hdp/current/hive-webhcat
 $ cp /usr/hdp/share/hst/hst-common/lib/commons-configuration-1.10.jar tomcat/lib/
 
 或者直接用wget下载Maven仓库中的文件也可以
+
+
+
+
 
 
 
